@@ -13,15 +13,16 @@ The ``run_analysis.R`` script performs the following:
 6. Creates complete dataset including all traing and test data.
 7. Convert the data in "activity" column from integer to Factor with human-readable labels
 8. Creates a list of variables which contains "Mean", "mean" or "std" in their names
-9. Creates a new tidy dataset with all the observations and only columns selected in the previous step, "subject" and "activity"
+9. Creates a new tidy dataset with all the observations and only columns selected in the previous step, "subject" and "activity". There are 10299 observations of 88 variables 
 10. Saves the new tidy dataset to file named ``tidy1.txt``. To read this file use ``read.table("tidy1.txt", header=TRUE)``
 
-11. Creates second dataset ``tidy2.txt``
+11. Creates dataframe containing the mean of each variable in the tidy dataset for each subject and activity. There are 180 obervations (6 activity types * 30 subjects).
+12. Saves the new tidy dataset with means to file ``tidy_means.txt``. This file can be read with ``read.table("tidy_means.txt", header=TRUE)``
 
 
 ## CodeBook
 
-Codebook describing the variables in tidy1.txt and tidy2.txt files can be found in CodeBook.md file
+Codebook describing the variables in tidy1.txt and tidy_means.txt files can be found in CodeBook.md file
 
 ## How to run
 
