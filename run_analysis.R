@@ -1,3 +1,7 @@
+#
+# Reads the raw data and creates two tidy datasets as per README and CodeBook
+#
+
 data_path <- "./UCI HAR Dataset/"
 
 # read the variable names and remove problematic characters ( "(", ")" and "," )
@@ -36,6 +40,8 @@ levels(all$activity)=c("Walking","WalkingUp","WalkingDown","Sitting","Standing",
 
 # find the variables (features) to keep: the ones containg mean, Mean or str in their names
 columns_to_keep <- grep("[Mm]ean|std", var_names$V2, value=TRUE)
+num_features=length(columns_to_keep)
+# also keep subject and actility variables
 columns_to_keep <- c(columns_to_keep, "subject", "activity")
 
 # final set with just the needed columns
@@ -44,4 +50,15 @@ reduced_set <- all[columns_to_keep]
 # write the final dataset as text file, to read it back use 
 #       rr <- read.table("tidy1.txt", header=TRUE)
 write.table(reduced_set, "tidy1.txt", row.names = FALSE, col.names = TRUE, quote = FALSE)
+
+all_means <- aggregate(reduced_set[1:num_features], list(activity=reduced_set$activity, subject=reduced_set$subject), mean)
+
+# Append "AVE-" in the beggining of each variable name except the activity and subject variabes (first two)
+current_names <- names(all_means[3:ncol(all_means)])
+better_names <- unlist(lapply(current_names, function(l) paste("AVE-",l,sep="")))
+names(all_means)[3:ncol(all_means)] <- better_names
+
+# write the averages dataset as text file, to read it back use 
+#       rr <- read.table("tidy_means.txt", header=TRUE)
+write.table(all_means, "tidy_means.txt", row.names = FALSE, col.names = TRUE, quote = FALSE)
 
