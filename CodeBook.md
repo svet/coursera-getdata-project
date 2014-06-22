@@ -3,8 +3,11 @@
 Tidy dataset containing variables with means and standart deviations, Subject IDs and Activity labels 
 proceeding from the original data set published at http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones.
 
+## tidy1.txt Data File
 
-## time Variables
+Data file ``tidy1.txt`` contains the complete data set (10299 observations) of 88 variables. 
+
+### time Variables
 
 Time domain variables (columns 1-xx):
 
@@ -49,7 +52,7 @@ Time domain variables (columns 1-xx):
     tBodyGyroJerkMag-mean Float
     tBodyGyroJerkMag-std Float
 
-## Frequency domain signals
+### Frequency domain signals
 
     fBodyAcc-mean-X 	Float
     fBodyAcc-mean-Y 	Float
@@ -91,7 +94,7 @@ Time domain variables (columns 1-xx):
     fBodyBodyGyroJerkMag-std 	Float
     fBodyBodyGyroJerkMag-meanFreq 	Float
     
-## Angle related variables
+### Angle related variables
 
     angletBodyAccMean-gravity 	Float
     angletBodyAccJerkMean-gravityMean 	Float
@@ -101,10 +104,26 @@ Time domain variables (columns 1-xx):
     angleY-gravityMean 	Float
     angleZ-gravityMean 	Float
 	
-## Identification variables	
+### Identification variables	
 
     subject Integer
             Subject ID
     activity String
             Activity Label
+
+
+## tidy_means.txt Data File
+
+Data file ``tidy_means.txt`` contains the mean value for each variable of the ``tidy1.txt`` dataset for 
+each subject and activity:
+
+    Activity String
+               Activity Label
+    Subject Int
+               Subject ID
+    Ave-tBodyAc-mean-X
+               Mean value of all observations of tBodyAc-mean-X variable 
+
+
+
 
