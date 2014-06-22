@@ -1,4 +1,7 @@
-coursera-getdata-project
+Coursera getdata project
 ========================
 
-Coursera Getting and Cleaning Data Course Project.
+# Cleaning the data
+
+
+
