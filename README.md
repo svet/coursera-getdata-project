@@ -21,7 +21,7 @@ The ``run_analysis.R`` script performs the following:
 
 ## CodeBook
 
-Codebook describing the variables in ``tidy1.txt`` and ``tidy_means.txt`` files can be found in CodeBook.md file
+Codebook describing the variables in ``tidy1.txt`` and ``tidy_means.txt`` files can be found in ``CodeBook.md`` file
 
 ## How to run
 
@@ -33,5 +33,5 @@ To repeat the cleaning procedure execute the ``run_analysis.R`` as follows:
     unzip uci.zip 
     R CMD BATCH coursera-getdata-project/run_analysis.R 
 
-   
+Output is saved as ``tidy1.txt`` and ``tidy_means.txt`` files.
 
